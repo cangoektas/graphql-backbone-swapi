@@ -1,0 +1,59 @@
+###########################################################
+# THIS FILE WAS GENERATED FOR DOCUMENTATION PURPOSES ONLY #
+# PLEASE DON'T EDIT THIS FILE                             #
+###########################################################
+
+type Query {
+  allPeople(
+    after: String
+    first: Int
+    before: String
+    last: Int
+  ): PeopleConnection
+  person(id: ID!): Person
+  node(id: ID!): Node
+}
+
+type PeopleConnection {
+  pageInfo: PageInfo!
+  edges: [PeopleEdge]
+  totalCount: Int
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type PeopleEdge {
+  node: Person
+  cursor: String!
+}
+
+type Person implements Node {
+  name: String
+  birthYear: String
+  eyeColor: String
+  gender: String
+  hairColor: String
+  height: Int
+  mass: Float
+  skinColor: String
+  created: String
+  edited: String
+  id: ID!
+}
+
+interface Node {
+  id: ID!
+}
+
+type Mutation {
+  updatePerson(id: ID!, input: PersonInput!): Person
+}
+
+input PersonInput {
+  name: String
+}

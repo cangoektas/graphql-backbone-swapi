@@ -1,0 +1,18 @@
+require:
+  - ts-node/register
+overwrite: true
+schema: "src/schema/index.ts"
+documents: "src/**/*.{js,ts}"
+generates:
+  typings/graphql.d.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+    config:
+      noExport: true
+      immutableTypes: true
+      skipTypename: true
+      preResolveTypes: true
+hooks:
+  afterOneFileWrite:
+    - prettier --write

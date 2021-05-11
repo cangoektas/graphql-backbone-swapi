@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "outDir": "dist",
+    "typeRoots": ["node_modules/@types", "typings"]
+  }
+}
